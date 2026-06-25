@@ -1,0 +1,17 @@
+resources:
+  pipelines:
+    pipeline_demopipeline:
+      name: demopipeline_prod
+      libraries:
+        - glob:
+            include: ../../src/pipelines/demopipeline/transformations/**
+      schema: bronze
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      # giving dynamic catalog name
+      catalog: ${var.catalog_name}
+      serverless: true
+      # root of the entire dlt, not just the transformations
+      # root_path: /../../src/pipelines/demopipeline
