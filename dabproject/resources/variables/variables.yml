@@ -1,0 +1,4 @@
+variables:
+  # creating variable for "catalog_name"
+  catalog_name:
+    default: assetbundles
